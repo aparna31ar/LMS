@@ -94,9 +94,9 @@ class LMS:
     
     def check_book_stock(self, book_id, user_id):
         for i in self.book_details:
-            if self.book_details[i]['copies'] > 0:
+            if int(self.book_details[i]['copies']) > 0:
                 #print(self.book_issue[i]['copies'])
-                self.book_details[i]['copies']=self.book_details[i]['copies']-1
+                self.book_details[i]['copies']=int(self.book_details[i]['copies'])-1
                 #print(self.book_issue[i]['copies'])
                 print('Book id {} issued to user_id {}'.format(self.book_details[i]['book_id'],user_id))
                 return self.book_details
